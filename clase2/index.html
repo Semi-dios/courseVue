@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <!-- development version, includes helpful console warnings -->
+
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{title}}</h1>
+
+      <h2>Ciclo</h2>
+      <ul  v-for="fruit of fruits">
+        <li>{{ fruit }}</li>
+      </ul>
+
+      <h2>Objeto</h2>
+      <ul  v-for="frui of fruit">
+        <li>
+          <input type="number" name="" v-model.number="frui.count" id="">
+          {{ frui.name }}-{{frui.state}} 
+          <button @click="frui.count++">+</button>
+          <button @click="frui.count--">-</button>
+            <span v-if="frui.count === 0">-Sin Stock</span>
+        </li>
+      </ul>
+      <h6>TOTAL FRUTAS : {{sumFruits}}</h6>
+      
+      <input type="text" name="" v-model="newFruit" id="" @keyup.enter="addFruit">
+      <button class="btn"  @click="addFruit">Agregar</button>
+      
+     
+
+    </div>
+    <script src="" async defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
