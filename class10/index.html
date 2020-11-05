@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <!-- development version, includes helpful console warnings -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  
+  </head>
+  <body>
+    <div id="app" >
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-lg-6">
+              <section>
+                <father></father>
+                
+              </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.5.1/dist/vuex.js"></script>
+    <script src="./components/greet.js"></script>
+    <script src="./components/account.js"></script>
+    <script src="./components/father.js"></script>
+    <script src="./components/children.js"></script>
+    <script >
+     
+     const store = new Vuex.Store({
+        state: {
+          number: 10
+        },
+        mutations: {
+          addN(){
+            this.state.number++;
+          },
+          subs(){
+            this.state.number--;
+          }
+         
+
+        }
+     });
+      new Vue({
+           el: '#app',
+           store: store,
+           data: {
+             greeting: 'Hi where Vue'
+           }
+         })
+    </script>
+
+    
+   
+  </body>
+</html>

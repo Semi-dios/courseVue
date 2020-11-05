@@ -1,0 +1,28 @@
+Vue.component('children',{
+    template:`<div bg-success text-white>
+      <h5>Children : {{number}}</h5>
+      <button class="btn btn-danger" @click="addN(2)">+</button>
+      <button class="btn btn-warning" @click="subs(2)">-</button>
+      <button class="btn btn-warning" @click="getCourse">Get</button>
+
+      <ul v-for="item of courses"  >
+      <li >{{item.name}}--{{item.models}}
+      </li>
+      </ul>
+    </div>`,
+    data(){
+      return{
+
+      }
+    }, 
+  
+    computed:{
+      ...Vuex.mapState([
+        'number','courses'
+      ])
+    },
+    methods: {
+      ...Vuex.mapMutations(['addN','subs']),
+      ...Vuex.mapActions(['getCourse'])
+    }
+});
